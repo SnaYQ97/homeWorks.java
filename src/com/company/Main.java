@@ -33,26 +33,17 @@ public class Main {
         choice = new InputValidate().isInt("Choice project by number: ", null, true, true, Limit, false, null);
 
         switch (choice) {
-            case 1:
-                new circleArea().task();
-                break;
-            case 2:
-                new helloArtur().task();
-                break;
-            case 3:
-                new biggestOne().task();
-                break;
-            case 4:
-                new sphereCalc().task();
-                break;
-            case 5:
-                new lottoGame().task();
-                break;
-            default:
+            case 1 -> new circleArea().task();
+            case 2 -> new helloArtur().task();
+            case 3 -> new biggestOne().task();
+            case 4 -> new sphereCalc().task();
+            case 5 -> new lottoGame().task();
+            default -> {
                 System.out.println("Projects list: ");
                 for (String project : projectsList) {
-                    System.out.println( project);
+                    System.out.println(project);
                 }
+            }
         }
     }
 }
