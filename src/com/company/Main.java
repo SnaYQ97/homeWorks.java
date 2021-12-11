@@ -22,7 +22,7 @@ public class Main {
                 "2 - HelloArtur",
                 "3 - BiggestOne",
                 "4 - SphereCalculator",
-                "5 - RandomSixNumbersLosTime",
+                "5 - lottoGame",
         };
         System.out.println("Projects list:");
         for (String project : projectsList) {
