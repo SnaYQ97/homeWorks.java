@@ -1,8 +1,6 @@
-package com.company.HomeworkTasks.ProgramingParadigms;
+package com.company.Tasks.ProgramingParadigms;
 
-import com.company.HomeworkTasks.Helpers.InputValidate;
-
-import java.util.Scanner;
+import com.company.Helpers.InputValidate;
 
 public class helloArtur {
     public void task() {

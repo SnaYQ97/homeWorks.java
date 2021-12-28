@@ -1,14 +1,13 @@
 package com.company.MainMenuItems;
 //Helpers
-import com.company.HomeworkTasks.Helpers.InputValidate;
-import com.company.HomeworkTasks.Helpers.PrintMenuList;
+import com.company.Helpers.InputValidate;
 //Main
 import com.company.Main;
 
 import java.io.IOException;
 import java.net.URL;
 
-import static com.company.HomeworkTasks.Helpers.PrintMenuList.printList;
+import static com.company.Helpers.PrintMenuList.printList;
 
 public class AboutAuthor {
     public static void menu() throws IOException {

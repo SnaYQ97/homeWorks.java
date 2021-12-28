@@ -1,8 +1,6 @@
-package com.company.HomeworkTasks.BasicOfPrograming;
+package com.company.Tasks.BasicOfPrograming;
 
-import com.company.HomeworkTasks.Helpers.InputValidate;
-
-import java.awt.image.ImagingOpException;
+import com.company.Helpers.InputValidate;
 
 public class fibonacciSequence {
     public void task() {

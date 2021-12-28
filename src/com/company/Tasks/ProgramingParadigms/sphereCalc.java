@@ -1,6 +1,6 @@
-package com.company.HomeworkTasks.ProgramingParadigms;
+package com.company.Tasks.ProgramingParadigms;
 
-import com.company.HomeworkTasks.Helpers.InputValidate;
+import com.company.Helpers.InputValidate;
 
 public class sphereCalc {
     public void task() {

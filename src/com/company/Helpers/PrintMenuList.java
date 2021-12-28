@@ -1,4 +1,4 @@
-package com.company.HomeworkTasks.Helpers;
+package com.company.Helpers;
 
 public class PrintMenuList {
      public static void printList(String listTitle, String[] list) {

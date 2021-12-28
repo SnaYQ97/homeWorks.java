@@ -1,4 +1,4 @@
-package com.company.HomeworkTasks.BasicOfPrograming;
+package com.company.Tasks.BasicOfPrograming;
 
 public class averageSquares {
     public void task() {

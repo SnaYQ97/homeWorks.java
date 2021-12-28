@@ -1,6 +1,6 @@
-package com.company.HomeworkTasks.BasicOfPrograming;
+package com.company.Tasks.BasicOfPrograming;
 
-import com.company.HomeworkTasks.Helpers.InputValidate;
+import com.company.Helpers.InputValidate;
 
 public class bitCharCounter {
     public void task() {

@@ -1,4 +1,4 @@
-package com.company.HomeworkTasks.Helpers;
+package com.company.Helpers;
 //Scanner
 import java.util.Scanner;
 //TO-DO

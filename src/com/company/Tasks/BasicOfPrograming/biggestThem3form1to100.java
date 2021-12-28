@@ -1,4 +1,4 @@
-package com.company.HomeworkTasks.BasicOfPrograming;
+package com.company.Tasks.BasicOfPrograming;
 
 public class biggestThem3form1to100 {
     public void task() {

@@ -1,9 +1,9 @@
 package com.company.MainMenuItems;
 //Helpers
-import com.company.HomeworkTasks.Helpers.InputValidate;
-import com.company.HomeworkTasks.Helpers.PrintMenuList;
+import com.company.Helpers.InputValidate;
+import com.company.Helpers.PrintMenuList;
 //Tasks
-import com.company.HomeworkTasks.ProgramingParadigms.*;
+import com.company.Tasks.ProgramingParadigms.*;
 //Main
 import com.company.Main;
 

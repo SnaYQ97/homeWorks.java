@@ -7,8 +7,8 @@ import com.company.MainMenuItems.AboutAuthor;
 import com.company.MainMenuItems.ProgramingParadigms;
 import com.company.MainMenuItems.BasicOfPrograming;
 //Helpers
-import com.company.HomeworkTasks.Helpers.InputValidate;
-import com.company.HomeworkTasks.Helpers.PrintMenuList;
+import com.company.Helpers.InputValidate;
+import com.company.Helpers.PrintMenuList;
 //Libs
 import java.io.IOException;
 

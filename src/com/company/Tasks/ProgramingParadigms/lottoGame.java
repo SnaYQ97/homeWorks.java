@@ -1,12 +1,9 @@
-package com.company.HomeworkTasks.ProgramingParadigms;
+package com.company.Tasks.ProgramingParadigms;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
 
-import com.company.HomeworkTasks.Helpers.InputValidate;
-import com.company.HomeworkTasks.Helpers.ArrayHelper;
+import com.company.Helpers.InputValidate;
+import com.company.Helpers.ArrayHelper;
 
 public class lottoGame {
     public void task() {

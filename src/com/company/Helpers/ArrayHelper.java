@@ -1,4 +1,4 @@
-package com.company.HomeworkTasks.Helpers;
+package com.company.Helpers;
 
 public class ArrayHelper {
     public int[] addElement(int newValue, int[] oldArray) {

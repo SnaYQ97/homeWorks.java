@@ -1,8 +1,8 @@
-package com.company.HomeworkTasks.ProgramingParadigms;
+package com.company.Tasks.ProgramingParadigms;
 
 import java.io.IOException;
 
-import com.company.HomeworkTasks.Helpers.InputValidate;
+import com.company.Helpers.InputValidate;
 
 public class circleArea {
     public void task() throws IOException {
