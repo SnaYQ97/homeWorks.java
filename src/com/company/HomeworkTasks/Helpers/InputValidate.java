@@ -1,20 +1,37 @@
 package com.company.HomeworkTasks.Helpers;
-
+//Scanner
 import java.util.Scanner;
+//TO-DO
 //TODO: change varibles name to cammelcase
+//TODO: Add isChar Validation
+//
 public class InputValidate {
-    public String isString(String message, String error_message) {
+    public String isString(String message, String error_message, boolean limitedLength, int[] lengthLimits) {
         if (error_message == null) error_message = "Invalid input";
         boolean isValid = false;
         String input = null;
+
         do {
             System.out.print(message);
             Scanner sc = new Scanner(System.in);
-            if (sc.hasNext("[A-Za-z]*")) {
-                input = sc.next();
-                isValid = true;
-            }else  {
-                System.out.println(error_message);
+            if (limitedLength) {
+                if (sc.hasNext("[A-Za-z]*")) {
+                    input = sc.next();
+                    if (input.length() >= lengthLimits[0] && input.length() <= lengthLimits[1]) {
+                        isValid = true;
+                    }else {
+                        System.out.println("Invalid input, limited length (maxLength("+lengthLimits[1]+")) of string expected");
+                    }
+                }else  {
+                    System.out.println(error_message);
+                }
+            } else {
+                if (sc.hasNext("[A-Za-z]*")) {
+                    input = sc.next();
+                    isValid = true;
+                }else  {
+                    System.out.println(error_message);
+                }
             }
         }while(!isValid);
         return input;

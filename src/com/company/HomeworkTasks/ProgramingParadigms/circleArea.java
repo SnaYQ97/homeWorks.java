@@ -1,4 +1,4 @@
-package com.company.HomeworkTasks;
+package com.company.HomeworkTasks.ProgramingParadigms;
 
 import java.io.IOException;
 

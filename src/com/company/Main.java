@@ -1,49 +1,45 @@
+//TO-DO
+//TODO: add back or exit menu in end of each task.
+
 package com.company;
-
-//tasks
-import com.company.HomeworkTasks.circleArea;
-import com.company.HomeworkTasks.helloArtur;
-import com.company.HomeworkTasks.biggestOne;
-import com.company.HomeworkTasks.sphereCalc;
-import com.company.HomeworkTasks.lottoGame;
-//import helper
+//Menu Items
+import com.company.MainMenuItems.AboutAuthor;
+import com.company.MainMenuItems.ProgramingParadigms;
+import com.company.MainMenuItems.BasicOfPrograming;
+//Helpers
 import com.company.HomeworkTasks.Helpers.InputValidate;
-
-
+import com.company.HomeworkTasks.Helpers.PrintMenuList;
+//Libs
 import java.io.IOException;
 
 public class Main {
-
-
     public static void main(String[] args) throws IOException {
-        int choice;
-        String[] projectsList = {
-                "1 - CircleArea",
-                "2 - HelloArtur",
-                "3 - BiggestOne",
-                "4 - SphereCalculator",
-                "5 - lottoGame",
-        };
-        System.out.println("Projects list:");
-        for (String project : projectsList) {
-            System.out.println( project);
-        }
+        SubjectsMenu();
+    }
 
-        int[] Limit = {1, 5}; //bring to top
-        choice = new InputValidate().isInt("Choice project by number: ", null, true, true, Limit, false, null);
+    public static void SubjectsMenu() throws IOException {
+        int choice;
+        String subjectsListTitle = "Subjects list: ";
+        String[] subjectsList = {
+                "1 - Programing Paradigms",
+                "2 - Basic of Programing",
+                //next Subject,
+                "\n3 - About me",
+                "0 - Exit\n"
+        };
+
+        PrintMenuList.printList(subjectsListTitle, subjectsList);
+
+        int[] Limit = {0, subjectsList.length-1}; //bring to top
+        choice = new InputValidate().isInt("Chose a subject's tasks: ", null, false, true, Limit, false, null);
 
         switch (choice) {
-            case 1 -> new circleArea().task();
-            case 2 -> new helloArtur().task();
-            case 3 -> new biggestOne().task();
-            case 4 -> new sphereCalc().task();
-            case 5 -> new lottoGame().task();
-            default -> {
-                System.out.println("Projects list: ");
-                for (String project : projectsList) {
-                    System.out.println(project);
-                }
-            }
+            case 0 -> System.exit(0);
+            case 1 -> new ProgramingParadigms().menu();
+            case 2 -> new BasicOfPrograming().menu();
+            case 3 -> new AboutAuthor().menu();
+
+            default -> PrintMenuList.printList(subjectsListTitle, subjectsList);
         }
     }
 }
