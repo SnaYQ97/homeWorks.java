@@ -13,11 +13,16 @@ public class BasicOfPrograming {
     public static void menu() throws IOException {
         int choice;
         String[] tasksList = {
-                "1 - Fibonacci sequence",
-                "2 - Biggest them 3 in range (1->100)",
-                "3 - Average of Squares (1->10)",
-                "4 - Even and Odd Numbers counter",
-                "5 - Bit in char counter",
+                "1 - Fibonacci sequence (task 5.1)",
+                "2 - Biggest them 3 in range (1->100) (task 5.2)",
+                "3 - Average of Squares (1->10) (task 5.3)",
+                "4 - Even and Odd Numbers counter (task 5.4)",
+                "5 - Bit in char counter (task 5.5)",
+                "6 - Print table of numbers (task 5.9)",
+                "7 - Print multiplication table (task 5.10)",
+                "8 - String length (task 7.2)",
+                "9 - Words counter (task 7.3)",
+
                 //New task
                 "\n0 - Back\n",
 
@@ -35,6 +40,11 @@ public class BasicOfPrograming {
             case 3 -> new averageSquares().task();
             case 4 -> new evenNumbersCounter().task();
             case 5 -> new bitCharCounter().task();
+            case 6 -> new printTableOfNumbers().task();
+            case 7 -> new printMultiplicationTable().task();
+            case 8 -> new stringLength().task();
+            case 9 -> new wordsCounter().task();
+
 
             default -> PrintMenuList.printList("Tasks list: ", tasksList);
         }

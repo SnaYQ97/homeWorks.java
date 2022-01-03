@@ -4,7 +4,7 @@ import java.util.Scanner;
 //TO-DO
 //TODO: change varibles name to cammelcase
 //TODO: Add isChar Validation
-//
+//TODO: Add extended Patterns to isString func and refactor this.
 public class InputValidate {
     public String isString(String message, String error_message, boolean limitedLength, int[] lengthLimits) {
         if (error_message == null) error_message = "Invalid input";
@@ -111,6 +111,4 @@ public class InputValidate {
 
         return isUnical;
     }
-
-
 }
