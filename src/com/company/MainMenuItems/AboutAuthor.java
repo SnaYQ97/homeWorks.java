@@ -10,7 +10,7 @@ import java.net.URL;
 import static com.company.Helpers.PrintMenuList.printList;
 
 public class AboutAuthor {
-    public static void menu() throws IOException {
+    public void menu() throws IOException {
         int choice;
         URL GitHubLink = new URL("https://github.com/artowir97");
         URL LinkedInLink = new URL("https://www.linkedin.com/in/artur-domurad-a57b81197/");
@@ -24,17 +24,17 @@ public class AboutAuthor {
         };
         System.out.println("My name is Artur Domurad,");
         System.out.println("I'm a Software Developer in Hemmersbach Co.");
-        printList("Tasks list: ", tasksList);
+        printList("Menu: ", tasksList);
 
         int[] Limit = {0, tasksList.length -1}; //bring to top
-        choice = new InputValidate().isInt("Choice project by number: ", null, false, true, Limit, false, null);
+        choice = new InputValidate().isInt("Choice item by number: ", null, false, true, Limit, false, null);
 
         switch (choice) {
             case 0 -> Main.SubjectsMenu();
             case 1 -> System.out.println(GitHubLink);
             case 2 -> System.out.println(LinkedInLink);
 
-            default -> printList("Tasks list: ", tasksList);
+            default -> printList("Menu: ", tasksList);
         }
     }
 }

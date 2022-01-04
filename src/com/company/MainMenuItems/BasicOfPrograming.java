@@ -10,7 +10,7 @@ import com.company.Main;
 import java.io.IOException;
 
 public class BasicOfPrograming {
-    public static void menu() throws IOException {
+    public void menu() throws IOException {
         int choice;
         String[] tasksList = {
                 "1 - Fibonacci sequence (task 5.1)",
@@ -43,7 +43,8 @@ public class BasicOfPrograming {
             case 6 -> new printTableOfNumbers().task();
             case 7 -> new printMultiplicationTable().task();
             case 8 -> new stringLength().task();
-            case 9 -> new wordsCounter().task();
+            case 9 -> new wordsCounter();
+
 
 
             default -> PrintMenuList.printList("Tasks list: ", tasksList);

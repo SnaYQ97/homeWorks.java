@@ -9,16 +9,13 @@ public class lottoGame {
     public void task() {
         int firstNumber, nextNumber;
         int[] Limit = {1, 49}, lottoTicket = new int[0];
-        int daysInYear, currentYear = java.time.Year.now().getValue(), years, days, dayCounter = 0;
-        String yearText, dayText;
-        long futerDate;
-        long todayDate;
+        int dayCounter = 0;
 
         firstNumber = new InputValidate().isInt("Input first number (0:49): ", null, true, true, Limit, false, null);
         lottoTicket = new ArrayHelper().addElement(firstNumber, lottoTicket);
 
-        while (lottoTicket.length <= 5) {//take 6 unical numbers from user
-            nextNumber = new InputValidate().isInt("Input unical number (0:49): ", null, true, true, Limit, true, lottoTicket);
+        while (lottoTicket.length <= 5) {//take 6 unique numbers from user
+            nextNumber = new InputValidate().isInt("Input unique number (0:49): ", null, true, true, Limit, true, lottoTicket);
             lottoTicket = new ArrayHelper().addElement(nextNumber, lottoTicket);
         }
         Arrays.sort(lottoTicket);

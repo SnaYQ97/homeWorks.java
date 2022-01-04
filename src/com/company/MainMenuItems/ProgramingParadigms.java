@@ -10,7 +10,7 @@ import com.company.Main;
 import java.io.IOException;
 
 public class ProgramingParadigms {
-    public static void menu() throws IOException {
+    public void menu() throws IOException {
         int choice;
         String listTitle = "Tasks list: ";
         String[] tasksList = {
@@ -27,7 +27,7 @@ public class ProgramingParadigms {
         PrintMenuList.printList(listTitle, tasksList);
 
         int[] Limit = {0, tasksList.length - 1}; //bring to top
-        choice = new InputValidate().isInt("Choice project by number: ", null, false, true, Limit, false, null);
+        choice = new InputValidate().isInt("Choice task by number: ", null, false, true, Limit, false, null);
 
         switch (choice) {
             case 0 -> Main.SubjectsMenu();
@@ -36,7 +36,6 @@ public class ProgramingParadigms {
             case 3 -> new biggestOne().task();
             case 4 -> new sphereCalc().task();
             case 5 -> new lottoGame().task();
-
 
             default -> PrintMenuList.printList(listTitle, tasksList);
         }
