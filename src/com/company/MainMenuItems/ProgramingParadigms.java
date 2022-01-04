@@ -24,6 +24,7 @@ public class ProgramingParadigms {
                 "\n0 - Back\n",
 
         };
+        System.out.println("PARADIGMS OF PROGRAMING MENU");
         PrintMenuList.printList(listTitle, tasksList);
 
         int[] Limit = {0, tasksList.length - 1}; //bring to top

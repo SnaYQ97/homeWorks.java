@@ -21,7 +21,7 @@ public class Main {
         int choice;
         String subjectsListTitle = "Subjects list: ";
         String[] subjectsList = {
-                "1 - Programing Paradigms",
+                "1 - Paradigms of Programing",
                 "2 - Basic of Programing",
                 //next Subject,
                 "\n3 - About me",
