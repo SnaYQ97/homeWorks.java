@@ -22,8 +22,8 @@ public class BasicOfPrograming {
                 "7 - Print multiplication table (task 5.10)",
                 "8 - String length (task 7.2)",
                 "9 - Words counter (task 7.3)",
+                "10 - Substring counter (task 7.4)",
 
-                //New task
                 "\n0 - Back\n",
 
         };
@@ -43,7 +43,8 @@ public class BasicOfPrograming {
             case 6 -> new printTableOfNumbers().task();
             case 7 -> new printMultiplicationTable().task();
             case 8 -> new stringLength().task();
-            case 9 -> new wordsCounter();
+            case 9 -> new wordsCounter().task();
+            case 10 -> new substringCounter().task();
 
 
 

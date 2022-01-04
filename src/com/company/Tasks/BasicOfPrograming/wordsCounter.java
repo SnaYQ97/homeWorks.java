@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class wordsCounter {
 
     public void task() {
-        System.out.println("Input sentence to count: ");
+        System.out.println("Input sentence to words count: ");
         System.out.println("Pres Ctrl+D or Ctrl+C for end program.");
         Scanner input = new Scanner(System.in);
 
