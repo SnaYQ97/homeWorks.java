@@ -2,16 +2,16 @@ package com.company.Tasks.BasicOfPrograming;
 
 public class evenNumbersCounter {
     public void task() {
-        int i = 0;
-        int evenCouner = 0;
+        int i;
+        int evenCounter = 0;
         int oddCounter = 0;
-        for (i = i; i <= 10; i++) {
+        for (i = 0; i <= 10; i++) {
             if (i % 2 == 0) {
-                evenCouner++;
+                evenCounter++;
             }else {
              oddCounter++;
             }
         }
-        System.out.println("In range from 1 to 10 is " +evenCouner+ " even numbers and "+oddCounter+ " odd numbers");
+        System.out.println("In range from 1 to 10 is " +evenCounter+ " even numbers and "+oddCounter+ " odd numbers");
     }
 }

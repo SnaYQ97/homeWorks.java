@@ -14,7 +14,7 @@ public class InputValidate {
             System.out.print(message);
             Scanner sc = new Scanner(System.in);
             if (limitedLength) {
-                if (sc.hasNext("[A-Za-z]_\\p{IsLatin}*")) {
+                if (sc.hasNext("[A-Za-z_\\p{IsLatin}]*")) {
                     input = sc.next();
                     if (input.length() >= lengthLimits[0] && input.length() <= lengthLimits[1]) {
                         isValid = true;

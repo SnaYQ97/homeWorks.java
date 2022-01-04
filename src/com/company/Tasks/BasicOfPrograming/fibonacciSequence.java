@@ -7,21 +7,19 @@ public class fibonacciSequence {
         int steps;
 
         System.out.println("Fibonacci sequence.");
-        System.out.println("");
+        System.out.println();
 
         steps = new InputValidate().isInt("Input steps count: ", null, true, false, null, false, null);
 
-        sequence(0, 0, steps);
+        sequence(steps);
 
     }
 
-    public int sequence(int sum, int step, int maxStep) {
+    public void sequence(int maxStep) {
+        int step;
         for (step = 1; step <= maxStep; step++) {
             System.out.println("Step " + step + ": " + fib(step-1));
         }
-
-
-        return 0;
     }
 
     public long fib  (long N) {

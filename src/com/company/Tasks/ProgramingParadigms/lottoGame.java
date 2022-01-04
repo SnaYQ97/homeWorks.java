@@ -44,7 +44,7 @@ public class lottoGame {
             if (lotto.length == 0) {
                 lotto = new ArrayHelper().addElement(lottoNumber, lotto);
             } else {
-                if (new InputValidate().isUnical(lottoNumber, lotto)) {
+                if (new InputValidate().isUnique(lottoNumber, lotto)) {
                     lotto = new ArrayHelper().addElement(lottoNumber, lotto);
                 }
             }

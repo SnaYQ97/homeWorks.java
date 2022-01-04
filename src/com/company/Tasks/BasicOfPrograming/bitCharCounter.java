@@ -9,7 +9,7 @@ public class bitCharCounter {
         int i, oneCounter = 0,charToInt;
         String intToBinaryString;
 
-        System.out.println("");
+        System.out.println();
         input = new InputValidate().isString("Input char to count: ", null, true, new int[]{1,1});
 
         //conversion
