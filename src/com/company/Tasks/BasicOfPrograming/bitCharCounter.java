@@ -15,7 +15,7 @@ public class bitCharCounter {
         //conversion
         stringToChar = input.charAt(0);
         //conversion
-        charToInt = (int) stringToChar;
+        charToInt = stringToChar;
         //conversion
         intToBinaryString = Integer.toBinaryString(charToInt);
 
