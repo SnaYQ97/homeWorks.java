@@ -1,12 +1,11 @@
 package com.company.Tasks.BasicOfPrograming;
 
-import java.util.IllegalFormatCodePointException;
-
 public class printMultiplicationTable {
     public void task() {
-        for (int i = 0; i <= 10; i++) {
-            System.out.println("");
-            for (int j = 0; j <= 10; j++) {
+        int i, j;
+        for (i = 0; i <= 10; i++) {
+            System.out.println();
+            for (j = 0; j <= 10; j++) {
                 if (i > 0) {
                     if ((i * j) < 10) {
                         if (j == 0) {
