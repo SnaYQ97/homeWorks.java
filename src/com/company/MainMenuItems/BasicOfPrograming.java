@@ -23,6 +23,7 @@ public class BasicOfPrograming {
                 "8 - String length (task 7.2)",
                 "9 - Words counter (task 7.3)",
                 "10 - Substring counter (task 7.4)",
+                "11 - Password Checker (task 7.5)",
 
                 "\n0 - Back\n",
 
@@ -45,6 +46,7 @@ public class BasicOfPrograming {
             case 8 -> new stringLength().task();
             case 9 -> new wordsCounter().task();
             case 10 -> new substringCounter().task();
+            case 11 -> new passwordChecker().task();
 
 
 
