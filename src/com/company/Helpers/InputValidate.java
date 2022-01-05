@@ -19,7 +19,7 @@ public class InputValidate {
                     if (input.length() >= lengthLimits[0] && input.length() <= lengthLimits[1]) {
                         isValid = true;
                     }else {
-                        System.out.println("Invalid input, limited length (maxLength("+lengthLimits[1]+")) of string expected");
+                        System.out.println("Invalid input, "+"min: "+lengthLimits[0]+" max: "+lengthLimits[1]+" length of string expected.");
                     }
                 }else  {
                     System.out.println(error_message);
