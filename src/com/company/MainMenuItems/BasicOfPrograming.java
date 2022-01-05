@@ -25,6 +25,8 @@ public class BasicOfPrograming {
                 "10 - Substring counter (task 7.4)",
                 "11 - Password Checker (task 7.5)",
                 "12 - Calculator (task 7.6)",
+                "13 - String arrays sorting (task 7.7)",
+                "14 - Addition and multiplication int arrays (task 8.3)",
 
                 "\n0 - Back\n",
 
@@ -49,7 +51,8 @@ public class BasicOfPrograming {
             case 10 -> new substringCounter().task();
             case 11 -> new passwordChecker().task();
             case 12 -> new calculator().task();
-
+            case 13 -> new sortStringArrays().task();
+            case 14 -> new arrayManipulation().task();
 
 
             default -> PrintMenuList.printList("Tasks list: ", tasksList);
