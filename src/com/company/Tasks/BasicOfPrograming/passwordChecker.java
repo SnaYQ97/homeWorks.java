@@ -11,7 +11,7 @@ public class passwordChecker {
 
         while (trails > 0) {
             String userInput = new InputValidate().isString("Input secret password: ", null, true, limitLength);
-            if (secretPassword.contains(userInput)) {
+            if (secretPassword.equals(userInput)) {
                 //success
                 System.out.println("Password is correct.");
                 System.out.println("Welcome!");
