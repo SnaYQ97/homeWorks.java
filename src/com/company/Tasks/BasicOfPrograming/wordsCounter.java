@@ -20,7 +20,6 @@ public class wordsCounter {
 
         while (sentence.hasNextLine()) {
             sentenceLine = sentence.nextLine();
-            //System.out.println(sentenceLine);
             Scanner line = new Scanner(sentenceLine);
             letters += sentenceLine.length();
             lines++;
