@@ -8,8 +8,8 @@ import com.company.Helpers.StringArrayHelper;
 
 public class calculator {
     public void task() {
-        //Original: num {dzialanie} num = num ->  = num is unnecessary
-        //My propose: num {dzialanie} num -> program return value.
+        //Original: num {operation} num = num ->  = num is unnecessary
+        //My propose: num {operation} num -> program return value.
 
         String[] actionList = {"plus", "minus", "times", "divide"}, wordsArray =  {};
         double a, b;
