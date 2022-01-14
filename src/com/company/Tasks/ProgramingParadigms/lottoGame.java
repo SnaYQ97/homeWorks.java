@@ -28,7 +28,9 @@ public class lottoGame {
             dayCounter++;
         }
 
-        System.out.println("You will won on " +dayCounter+ " try. Good luck! Try again!");
+
+        System.out.println(dayCounter);
+        System.out.println("You will won on after " + dayCounter/365 + " years, and " + dayCounter%365 + "days. Good luck! Try again!");
     }
 
     public int getRandomIntBetween(int min, int max) {

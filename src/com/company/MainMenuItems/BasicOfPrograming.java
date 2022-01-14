@@ -20,13 +20,17 @@ public class BasicOfPrograming {
                 "5 - Bit in char counter (task 5.5)",
                 "6 - Print table of numbers (task 5.9)",
                 "7 - Print multiplication table (task 5.10)",
-                "8 - String length (task 7.2)",
-                "9 - Words counter (task 7.3)",
-                "10 - Substring counter (task 7.4)",
-                "11 - Password Checker (task 7.5)",
-                "12 - Calculator (task 7.6)",
-                "13 - String arrays sorting (task 7.7)",
-                "14 - Addition and multiplication int arrays (task 8.3)",
+                "8 - Cezar cipher (task 5.11)",
+                //5.11
+
+                //6.1->6.4
+                "9 - String length (task 7.2)",
+                "10 - Words counter (task 7.3)",
+                "11 - Substring counter (task 7.4)",
+                "12 - Password Checker (task 7.5)",
+                "13 - Calculator (task 7.6)",
+                "14 - String arrays sorting (task 7.7)",
+                "15 - Addition and multiplication int arrays (task 8.3)",
 
                 "\n0 - Back\n",
 
@@ -46,13 +50,15 @@ public class BasicOfPrograming {
             case 5 -> new bitCharCounter().task();
             case 6 -> new printTableOfNumbers().task();
             case 7 -> new printMultiplicationTable().task();
-            case 8 -> new stringLength().task();
-            case 9 -> new wordsCounter().task();
-            case 10 -> new substringCounter().task();
-            case 11 -> new passwordChecker().task();
-            case 12 -> new calculator().task();
-            case 13 -> new sortStringArrays().task();
-            case 14 -> new arrayManipulation().task();
+            case 8 -> new cezarCipher().task();
+            //
+            case 18 -> new stringLength().task();
+            case 19 -> new wordsCounter().task();
+            case 110 -> new substringCounter().task();
+            case 111 -> new passwordChecker().task();
+            case 112 -> new calculator().task();
+            case 113 -> new sortStringArrays().task();
+            case 114 -> new arrayManipulation().task();
 
 
             default -> PrintMenuList.printList("Tasks list: ", tasksList);
