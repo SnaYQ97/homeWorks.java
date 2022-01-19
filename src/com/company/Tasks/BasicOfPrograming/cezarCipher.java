@@ -4,11 +4,10 @@ package com.company.Tasks.BasicOfPrograming;
 import com.company.Helpers.PrintMenuList;
 import com.company.Helpers.InputValidate;
 //libs
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class cezarCipher {
-    char[] letters = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWYZŹŻ".toCharArray();
+    char[] letters = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ".toCharArray();
     char[] numbers = "0123456789".toCharArray();
 
     public void task() {
@@ -19,53 +18,24 @@ public class cezarCipher {
         int[] Limit = {1, 2};
         int choice;
 
-        //Input: Hello word
-        // move -> 1
-        //Output: Ifmmp xpse
-
-        //matryca liter (A-Z_a-z) -> array of characters
-        //matryce liczb (0-9) -> array of characters
-
-        // text to char
-        // char + 1
-        // moved char.
-
-        //print menu
-        // 1 - encode message zakodować
-        // 2 - decode message odkodować
-
-        //=========
-        //1
-        //get message to code
-        //get vector move
-        // code
-        //return coded message
-
-        //======
-        //2
-        //get coded message
-        //get knowing move vector
-        // decode
-        //return decoded message.
-
         System.out.println("Welcome in Cezar Cipher.");
-
-        new PrintMenuList().printList("What do you want do with your message?", menu);
-        choice = new InputValidate().isInt("Input choice number: ", null, false, true, Limit, false, null);
-
         String message = getMessage();
-        System.out.println(message);
-        int shift = getCezarShift(); //not working correct
-        System.out.println(shift);
+        System.out.println(message);//test
+        int shift = getCezarShift();
+        System.out.println(shift);//test
 
+//        new PrintMenuList().printList("What do you want do with your message?", menu);
+//        choice = new InputValidate().isInt("Input choice number: ", null, false, true, Limit, false, null);
+//
 //        switch (choice) {
 //            case 1 -> System.out.println(encrypt(message, shift));
 //            case 2 -> System.out.println(decrypt(message, shift));
-//
 //            default -> task();
 //        }
-    }
+        System.out.println(encrypt(message, shift));
 
+    }
+    //Get Data
     public String getMessage() {
         String message = "";
         System.out.println("Input message: ");
@@ -77,35 +47,56 @@ public class cezarCipher {
                 message += line.next() + " ";
                 //System.out.println(); //{debug}
             }
-            if (!input.hasNextLine()) {
-                break;
-            }
+            break;
         }
         return message.replaceAll("\\s+$", "");
     }
-    //not working correct
     public int getCezarShift() {
-        int shift = new InputValidate().isInt("Input shift: ", null, false, false, null, false, null);
+        int[] Limit = {0, 9};
+        int shift = new InputValidate().isInt("Input shift: ", null, false, true, Limit, false, null);
         return shift;
     }
-
+    //Handler data
     public String decrypt(String message, int cezarShift) {
         return "";
     }
 
     public String encrypt(String message, int cezarShift) {
-//        StringBuilder result = new StringBuilder();
-//        for (char character : message.toCharArray()) {
-//            if (character != ' ') {
-//                int originalAlphabetPosition = character - 'a';
-//                int newAlphabetPosition = (originalAlphabetPosition + offset) % 26;
-//                char newCharacter = (char) ('a' + newAlphabetPosition);
-//                result.append(newCharacter);
-//            } else {
-//                result.append(character);
+        System.out.println("encrypting...");
+        String newMessage = "";
+        String letter;
+        for (char character : message.toCharArray()) {
+            if (Character.isAlphabetic(character)) {
+                if (Character.isLowerCase(character)) {
+                    character = Character.toUpperCase(character);
+                }
+                //move on letters matrix
+                for (int i = 0; i < letters.length; i++) {
+                    System.out.println("Looking for index...");
+                    if (character == letters[i]) {
+                        int indexOfCharacter = i;//[0] A
+                        int maxMatrixIndex = letters.length-1; //32-1 [31]
+
+                        int newLetterIndex = indexOfCharacter + cezarShift; //0 - 1 = -1
+                        if (newLetterIndex > maxMatrixIndex) { //32 > 31
+                            newLetterIndex = newLetterIndex - letters.length; //x = 32 - 31 = 1 [1] -> b expected [0]
+                        }else if(newLetterIndex < 0) {
+                            newLetterIndex = letters.length - maxMatrixIndex;
+                        }
+                        char encrytChar = letters[newLetterIndex];
+                        letter = Character.toString(encrytChar);
+                        newMessage+=letter;
+                    }
+                }
+
+            }else {
+                letter = Character.toString(character);
+                newMessage += letter;
+            }
+//            if (Character.isDigit(character)) {
+//                //move on numbers matrix
 //            }
-//        }
-//        return result;
-        return "";
+        }
+        return newMessage;
     }
 }
