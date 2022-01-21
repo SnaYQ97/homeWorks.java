@@ -55,7 +55,6 @@ public class cezarCipher {
     }
     //Handler data
     public String decrypt(String message, int cezarShift) {
-        System.out.println("decrypting...");
         StringBuilder newMessage = new StringBuilder();
         String letter;
         for (char character : message.toCharArray()) {
@@ -72,7 +71,6 @@ public class cezarCipher {
         return newMessage.toString();
     }
     public String encrypt(String message, int cezarShift) {
-        System.out.println("encrypting...");
         StringBuilder newMessage = new StringBuilder();
         String letter;
         for (char character : message.toCharArray()) {

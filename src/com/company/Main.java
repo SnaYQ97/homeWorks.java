@@ -4,6 +4,7 @@
 package com.company;
 //Menu Items
 import com.company.MainMenuItems.AboutAuthor;
+import com.company.MainMenuItems.Logic;
 import com.company.MainMenuItems.ProgramingParadigms;
 import com.company.MainMenuItems.BasicOfPrograming;
 //Helpers
@@ -23,8 +24,9 @@ public class Main {
         String[] subjectsList = {
                 "1 - Paradigms of Programing",
                 "2 - Basic of Programing",
+                "3 - Logic",
                 //next Subject,
-                "\n3 - About me",
+                "\n4 - About me",
                 "0 - Exit\n"
         };
 
@@ -37,7 +39,8 @@ public class Main {
             case 0 -> System.exit(0);
             case 1 -> new ProgramingParadigms().menu();
             case 2 -> new BasicOfPrograming().menu();
-            case 3 -> new AboutAuthor().menu();
+            case 3 -> new Logic().menu();
+            case 4 -> new AboutAuthor().menu();
 
             default -> PrintMenuList.printList(subjectsListTitle, subjectsList);
         }

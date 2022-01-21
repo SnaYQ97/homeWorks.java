@@ -25,7 +25,7 @@ public class InputValidate {
                     System.out.println(error_message);
                 }
             } else {
-                if (sc.hasNext("[A-Za-z_\\p{IsLatin}]*")) {
+                if (sc.hasNext("[A-Za-z_\\p{IsLatin}]*")) { //\p{IsAlphabetic} //mather ("")
                     input = sc.next();
                     isValid = true;
                 }else  {
@@ -87,6 +87,25 @@ public class InputValidate {
             } else if(sc.hasNextInt()) {
                 input = sc.nextInt();
                 isValid = true;
+            } else {
+                System.out.println(error_message);
+            }
+        }while(!isValid);
+
+        return input;
+    }
+
+    public double isDouble (String message, String error_message) {
+        error_message = error_message == null ?  "Invalid input, number expected" : error_message;
+        boolean isValid = false;
+        double input = 0.0;
+
+        do {
+            System.out.print(message);
+            Scanner sc = new Scanner(System.in); //input value and start validate
+            if (sc.hasNextDouble()) {
+                isValid = true;
+                input = sc.nextDouble();
             } else {
                 System.out.println(error_message);
             }

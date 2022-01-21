@@ -14,7 +14,7 @@ public class lottoGame {
         firstNumber = new InputValidate().isInt("Input first number (0:49): ", null, true, true, Limit, false, null);
         lottoTicket = new IntArrayHelper().addElement(firstNumber, lottoTicket);
 
-        while (lottoTicket.length <= 5) {//take 6 unique numbers from user
+        while (lottoTicket.length < 6) {//take 6 unique numbers from user
             nextNumber = new InputValidate().isInt("Input unique number (0:49): ", null, true, true, Limit, true, lottoTicket);
             lottoTicket = new IntArrayHelper().addElement(nextNumber, lottoTicket);
         }
@@ -30,7 +30,7 @@ public class lottoGame {
 
 
         System.out.println(dayCounter);
-        System.out.println("You will won on after " + dayCounter/365 + " years, and " + dayCounter%365 + "days. Good luck! Try again!");
+        System.out.println("You will won on after " + dayCounter/365 + " years, and " + dayCounter%365 + " days. Good luck! Try again!");
     }
 
     public int getRandomIntBetween(int min, int max) {
