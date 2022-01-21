@@ -1,102 +1,115 @@
 package com.company.Tasks.BasicOfPrograming;
 
 //helpers
-import com.company.Helpers.PrintMenuList;
 import com.company.Helpers.InputValidate;
+import com.company.Helpers.PrintMenuList;
 //libs
 import java.util.Scanner;
 
 public class cezarCipher {
-    char[] letters = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ".toCharArray();
+    char[] letters = "AĄBCĆDEĘFGIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ".toCharArray();
     char[] numbers = "0123456789".toCharArray();
-
     public void task() {
-        String[] menu = {
-                "1 - Decrypt",
-                "2 - Encrypt",
+        String[] choiceList = {
+                "1 - Encrypt",
+                "2 - Decrypt",
         };
         int[] Limit = {1, 2};
         int choice;
-
         System.out.println("Welcome in Cezar Cipher.");
         String message = getMessage();
-        System.out.println(message);//test
         int shift = getCezarShift();
-        System.out.println(shift);//test
 
-//        new PrintMenuList().printList("What do you want do with your message?", menu);
-//        choice = new InputValidate().isInt("Input choice number: ", null, false, true, Limit, false, null);
-//
-//        switch (choice) {
-//            case 1 -> System.out.println(encrypt(message, shift));
-//            case 2 -> System.out.println(decrypt(message, shift));
-//            default -> task();
-//        }
-        System.out.println(encrypt(message, shift));
+        System.out.println("Your current message: "+message);
+        System.out.println("Shift: "+shift);
+        PrintMenuList.printList("What do you want do with your message?", choiceList);
+        choice = new InputValidate().isInt("Input choice number: ", null, false, true, Limit, false, null);
 
+        switch (choice) {
+            case 1 -> {
+                System.out.println("encoding...");
+                System.out.println(encrypt(message, shift));}
+            case 2 -> {
+                System.out.println("decoding...");
+                System.out.println(decrypt(message, shift));
+            }
+            default -> task();
+        }
     }
-    //Get Data
     public String getMessage() {
-        String message = "";
+        StringBuilder message = new StringBuilder();
         System.out.println("Input message: ");
         Scanner input = new Scanner(System.in);
-        while (input.hasNextLine()) {
+        if(input.hasNextLine()) {
             String sentenceLine = input.nextLine();
             Scanner line = new Scanner(sentenceLine);
             while (line.hasNext()) {
-                message += line.next() + " ";
-                //System.out.println(); //{debug}
+                message.append(line.next()).append(" ");
             }
-            break;
         }
-        return message.replaceAll("\\s+$", "");
+        return message.toString().replaceAll("\\s+$", "");
     }
     public int getCezarShift() {
         int[] Limit = {0, 9};
-        int shift = new InputValidate().isInt("Input shift: ", null, false, true, Limit, false, null);
-        return shift;
+        return new InputValidate().isInt("Input shift: ", null, false, true, Limit, false, null);
     }
     //Handler data
     public String decrypt(String message, int cezarShift) {
-        return "";
-    }
-
-    public String encrypt(String message, int cezarShift) {
-        System.out.println("encrypting...");
-        String newMessage = "";
+        System.out.println("decrypting...");
+        StringBuilder newMessage = new StringBuilder();
         String letter;
         for (char character : message.toCharArray()) {
             if (Character.isAlphabetic(character)) {
-                if (Character.isLowerCase(character)) {
-                    character = Character.toUpperCase(character);
-                }
-                //move on letters matrix
-                for (int i = 0; i < letters.length; i++) {
-                    System.out.println("Looking for index...");
-                    if (character == letters[i]) {
-                        int indexOfCharacter = i;//[0] A
-                        int maxMatrixIndex = letters.length-1; //32-1 [31]
-
-                        int newLetterIndex = indexOfCharacter + cezarShift; //0 - 1 = -1
-                        if (newLetterIndex > maxMatrixIndex) { //32 > 31
-                            newLetterIndex = newLetterIndex - letters.length; //x = 32 - 31 = 1 [1] -> b expected [0]
-                        }else if(newLetterIndex < 0) {
-                            newLetterIndex = letters.length - maxMatrixIndex;
-                        }
-                        char encrytChar = letters[newLetterIndex];
-                        letter = Character.toString(encrytChar);
-                        newMessage+=letter;
-                    }
-                }
-
+                character = Character.toUpperCase(character);
+                newMessage.append(decodeCharOnMatrix(character, letters, cezarShift));
+            }else if(Character.isDigit(character)) {
+                newMessage.append(decodeCharOnMatrix(character, numbers, cezarShift));
             }else {
                 letter = Character.toString(character);
-                newMessage += letter;
+                newMessage.append(letter);
             }
-//            if (Character.isDigit(character)) {
-//                //move on numbers matrix
-//            }
         }
-        return newMessage;
+        return newMessage.toString();
+    }
+    public String encrypt(String message, int cezarShift) {
+        System.out.println("encrypting...");
+        StringBuilder newMessage = new StringBuilder();
+        String letter;
+        for (char character : message.toCharArray()) {
+            if (Character.isAlphabetic(character)) {
+                character = Character.toUpperCase(character);
+                newMessage.append(encodeCharOnMatrix(character, letters, cezarShift));
+            }else if(Character.isDigit(character)) {
+                newMessage.append(encodeCharOnMatrix(character, numbers, cezarShift));
+            }else {
+                letter = Character.toString(character);
+                newMessage.append(letter);
+            }
+        }
+        return newMessage.toString();
+    }
+    public char encodeCharOnMatrix(char character, char[] matrix, int shift) {
+        char newChar = character;
+        for (int i = 0; i < matrix.length; i++) {
+            if (character == matrix[i]) {
+                newChar = matrix[(i+shift)%matrix.length];
+                break;
+            }
+        }
+        return newChar;
+    }
+    public char decodeCharOnMatrix(char character, char[] matrix, int shift) {
+        char newChar = character;
+        for (int i = 0; i < matrix.length; i++) {
+            if (character == matrix[i]) {
+                int indexWithShift = i-shift;
+                if (indexWithShift < 0) {
+                    indexWithShift += matrix.length;
+                }
+                newChar = matrix[indexWithShift];
+                break;
+            }
+        }
+        return newChar;
     }
 }
