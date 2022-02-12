@@ -12,9 +12,6 @@ import static com.company.Helpers.PrintMenuList.printList;
 public class AboutAuthor {
     public void menu() throws IOException {
         int choice;
-        URL GitHubLink = new URL("https://github.com/artowir97");
-        URL LinkedInLink = new URL("https://www.linkedin.com/in/artur-domurad-a57b81197/");
-
         String[] tasksList = {
                 "1 - GitHub",
                 "2 - LinkedIn",
@@ -22,12 +19,17 @@ public class AboutAuthor {
                 "\n0 - Back\n",
 
         };
+        int[] Limit = {0, tasksList.length -1}; //bring to top
+        URL GitHubLink = new URL("https://github.com/artowir97");
+        URL LinkedInLink = new URL("https://www.linkedin.com/in/artur-domurad-a57b81197/");
+
+
         System.out.println("My name is Artur Domurad,");
         System.out.println("I'm a Software Developer in Hemmersbach Co.");
         printList("Menu: ", tasksList);
 
-        int[] Limit = {0, tasksList.length -1}; //bring to top
-        choice = new InputValidate().isInt("Choice item by number: ", null, false, true, Limit, false, null);
+
+        choice = new InputValidate().isInt("Choice item by number: ", null, false, true, Limit, false, null, false, false);
 
         switch (choice) {
             case 0 -> Main.SubjectsMenu();

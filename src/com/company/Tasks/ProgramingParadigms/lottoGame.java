@@ -11,11 +11,11 @@ public class lottoGame {
         int[] Limit = {1, 49}, lottoTicket = new int[0];
         int dayCounter = 0;
 
-        firstNumber = new InputValidate().isInt("Input first number (0:49): ", null, true, true, Limit, false, null);
+        firstNumber = new InputValidate().isInt("Input first number (0:49): ", null, true, true, Limit, false, null, false, false);
         lottoTicket = new IntArrayHelper().addElement(firstNumber, lottoTicket);
 
         while (lottoTicket.length < 6) {//take 6 unique numbers from user
-            nextNumber = new InputValidate().isInt("Input unique number (0:49): ", null, true, true, Limit, true, lottoTicket);
+            nextNumber = new InputValidate().isInt("Input unique number (0:49): ", null, true, true, Limit, true, lottoTicket, false, false);
             lottoTicket = new IntArrayHelper().addElement(nextNumber, lottoTicket);
         }
         Arrays.sort(lottoTicket);

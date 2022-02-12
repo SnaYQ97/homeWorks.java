@@ -11,7 +11,7 @@ public class circleArea {
         int radius;
         //inset Radius value
         int[] Limit = {0, 103621}; //10362 is max calculated radius for java int
-        radius =  new InputValidate().isInt("Input your circle radius:  ", null, true, true, Limit, false, null);
+        radius =  new InputValidate().isInt("Input your circle radius:  ", null, true, true, Limit, false, null, false, false);
 
         //Calc Circle area
         var CircleArea = pi*(radius*radius);

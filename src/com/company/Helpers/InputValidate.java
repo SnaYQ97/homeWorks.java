@@ -36,7 +36,7 @@ public class InputValidate {
         return input;
     }
 
-    public int isInt (String message, String error_message, boolean positive, boolean limit, int[] between, boolean unique, int[] uniqueList) { //, boolean isPositive
+    public int isInt (String message, String error_message, boolean positive, boolean limit, int[] between, boolean unique, int[] uniqueList, boolean even, boolean odd) { //, boolean isPositive
         boolean isValid = false;
         if (error_message == null) error_message = "Invalid input, number expected";
         //find between java function
@@ -84,7 +84,20 @@ public class InputValidate {
                     isValid = true;
                 }
                 else System.out.println("Invalid input, positive number expected");
-            } else if(sc.hasNextInt()) {
+            }else if (sc.hasNextInt() && even) {
+                input = sc.nextInt();
+                if (isEven(input)) {
+                    isValid = true;
+                }
+                else System.out.println("Invalid input, even number expected");
+            }else if (sc.hasNextInt() && odd) {
+                input = sc.nextInt();
+                if (!isEven(input)) {
+                    isValid = true;
+                }
+                else System.out.println("Invalid input, odd number expected");
+            }
+            else if(sc.hasNextInt()) {
                 input = sc.nextInt();
                 isValid = true;
             } else {
@@ -99,13 +112,12 @@ public class InputValidate {
         error_message = error_message == null ?  "Invalid input, number expected" : error_message;
         boolean isValid = false;
         double input = 0.0;
-
         do {
             System.out.print(message);
             Scanner sc = new Scanner(System.in); //input value and start validate
             if (sc.hasNextDouble()) {
-                isValid = true;
                 input = sc.nextDouble();
+                isValid = true;
             } else {
                 System.out.println(error_message);
             }
@@ -125,5 +137,9 @@ public class InputValidate {
             }
         }
         return isUnique;
+    }
+
+    public boolean isEven(int input) {
+        return input%2==0;
     }
 }

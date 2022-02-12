@@ -28,7 +28,7 @@ public class ProgramingParadigms {
         PrintMenuList.printList(listTitle, tasksList);
 
         int[] Limit = {0, tasksList.length - 1}; //bring to top
-        choice = new InputValidate().isInt("Choice task by number: ", null, false, true, Limit, false, null);
+        choice = new InputValidate().isInt("Choice task by number: ", null, false, true, Limit, false, null, false, false);
 
         switch (choice) {
             case 0 -> Main.SubjectsMenu();

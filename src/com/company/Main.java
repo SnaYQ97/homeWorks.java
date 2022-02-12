@@ -33,7 +33,7 @@ public class Main {
         PrintMenuList.printList(subjectsListTitle, subjectsList);
 
         int[] Limit = {0, subjectsList.length-1}; //bring to top
-        choice = new InputValidate().isInt("Chose a subject's tasks: ", null, false, true, Limit, false, null);
+        choice = new InputValidate().isInt("Chose a subject's tasks: ", null, false, true, Limit, false, null, false, false);
 
         switch (choice) {
             case 0 -> System.exit(0);

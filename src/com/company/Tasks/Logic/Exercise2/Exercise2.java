@@ -1,27 +1,27 @@
-package com.company.MainMenuItems;
-//Helpers
+package com.company.Tasks.Logic.Exercise2;
+//helpers
 import com.company.Helpers.InputValidate;
 import com.company.Helpers.PrintMenuList;
-//Main
-import com.company.Main;
-//Menus
-import com.company.Tasks.Logic.Exercise2.Exercise2;
-import com.company.Tasks.Logic.Exercise1.ChaptersMenu;
+//menus
+import com.company.Tasks.Logic.Exercise2.TasksInEnglish.TasksInEnglishMenu;
+import com.company.MainMenuItems.Logic;
+import com.company.Tasks.Logic.Exercise2.TasksInPolish.TasksInPolishMenu;
 
 import java.io.IOException;
 
-public class Logic {
+public class Exercise2 {
     public void menu() throws IOException {
         int choice;
         String listTitle = "Exercises menu: ";
         String[] tasksList = {
                 //Chapter 1
-                "1 - Exercise1",
-                "2 - Exercise2",
+                "1 - Tasks in English from WebSite",
+                "2 - Tasks in Polish from PDF",
                 //new Task
-                "\n0 - Back to Subjects Menu\n",
+                "\n0 - Back to Exercises menu\n",
+
         };
-        System.out.println("You choice Logic subject.");
+        System.out.println("You choice Exercise2.");
         System.out.println("");
         PrintMenuList.printList(listTitle, tasksList);
 
@@ -29,9 +29,10 @@ public class Logic {
         choice = new InputValidate().isInt("Choice Exercise by number: ", null, false, true, Limit, false, null, false, false);
 
         switch (choice) {
-            case 0 -> Main.SubjectsMenu();
-            case 1 -> new ChaptersMenu().menu();
-            case 2 -> new Exercise2().menu();
+            case 0 -> new Logic().menu();
+            case 1 -> new TasksInEnglishMenu().menu();
+            case 2 -> new TasksInPolishMenu().menu();
+
             default -> PrintMenuList.printList(listTitle, tasksList);
         }
     }

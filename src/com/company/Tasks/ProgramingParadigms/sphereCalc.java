@@ -8,7 +8,7 @@ public class sphereCalc {
         final double pi = Math.PI;
         int radius;
         //inset Radius value
-        radius =  new InputValidate().isInt("Input radius:  ", null, true, false, null, false, null);
+        radius =  new InputValidate().isInt("Input radius:  ", null, true, false, null, false, null, false, false);
 
         //Calc sphere
         var sphereSurface = 4*pi*(radius*radius);

@@ -9,7 +9,7 @@ public class fibonacciSequence {
         System.out.println("Fibonacci sequence.");
         System.out.println();
 
-        steps = new InputValidate().isInt("Input steps count: ", null, true, false, null, false, null);
+        steps = new InputValidate().isInt("Input steps count: ", null, true, false, null, false, null, false, false);
 
         sequence(steps);
 
